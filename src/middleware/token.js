@@ -12,8 +12,6 @@ module.exports = async(req,res, next)=>{
     if(!data){
         return res.status(403).json({status:"Forbidden",message:"Unauthorization"});
     }
-
-    console.log(data);
     const decrypt = await get(data.data);
 
     if(!decrypt){
